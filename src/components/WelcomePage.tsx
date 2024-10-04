@@ -19,11 +19,42 @@ const WelcomePage = () => {
   };
 
   return (
-    <div>
-      <h1>Welcome to the OAuth2 PKCE App</h1>
-      <button onClick={loginWithOAuth}>Login with OAuth2</button>
+    <div style={styles.container}>
+      <h1 style={styles.heading}>Welcome to the OAuth2 PKCE App</h1>
+      <button style={styles.button} onClick={loginWithOAuth}>
+        Login with OAuth2
+      </button>
     </div>
   );
+};
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column" as const,
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    backgroundColor: "#f4f4f4",
+  },
+  heading: {
+    fontSize: "2.5rem",
+    color: "#333",
+    marginBottom: "20px",
+  },
+  button: {
+    padding: "10px 20px",
+    fontSize: "1rem",
+    color: "#fff",
+    backgroundColor: "#4CAF50",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    transition: "background-color 0.3s ease",
+  },
+  buttonHover: {
+    backgroundColor: "#45a049",
+  },
 };
 
 export default WelcomePage;

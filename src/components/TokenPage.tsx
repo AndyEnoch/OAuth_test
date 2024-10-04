@@ -25,6 +25,7 @@ const TokenPage = () => {
 
           const { access_token } = response.data;
           sessionStorage.setItem("access_token", access_token);
+          sessionStorage.removeItem("code_verifier");
           navigate("/authenticated");
         } catch (error) {
           console.error("Error exchanging token:", error);
@@ -35,7 +36,22 @@ const TokenPage = () => {
     fetchToken();
   }, [searchParams, navigate]);
 
-  return <h1>Processing OAuth2 Token...</h1>;
+  return (
+    <div style={styles.container}>
+      <h1>Processing OAuth2 Token...</h1>
+    </div>
+  );
+};
+
+const styles = {
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    backgroundColor: "#f4f4f4",
+    textAlign: "center" as const,
+  },
 };
 
 export default TokenPage;

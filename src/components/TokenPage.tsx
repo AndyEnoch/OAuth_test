@@ -20,7 +20,7 @@ const TokenPage = () => {
             code,
             redirect_uri: oauthConfig.redirectUri,
             code_verifier: verifier,
-            scope: oauthConfig.scopes,
+            scope: "profile email address",
           });
 
           const { access_token } = response.data;

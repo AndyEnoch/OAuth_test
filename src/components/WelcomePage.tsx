@@ -13,7 +13,7 @@ const WelcomePage = () => {
 
   const loginWithOAuth = async () => {
     const codeChallenge = await generateCodeChallenge(codeVerifier);
-    const authUrl = `${oauthConfig.authorizationEndpoint}?response_type=code&client_id=${oauthConfig.clientId}&redirect_uri=${oauthConfig.redirectUri}&scope=${oauthConfig.scopes}&code_challenge=${codeChallenge}&code_challenge_method=S256`;
+    const authUrl = `${oauthConfig.authorizationEndpoint}?response_type=code&client_id=${oauthConfig.clientId}&redirect_uri=${oauthConfig.redirectUri}&code_challenge=${codeChallenge}&code_challenge_method=S256`;
 
     window.location.href = authUrl;
   };

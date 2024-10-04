@@ -3,13 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import WelcomePage from "../components/WelcomePage";
 import ProtectedRoute from "./ProtectedRoute";
 import AuthenticatedPage from "../AuthenticatedPage";
+import TokenPage from "../components/TokenPage";
 
 const RootRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<WelcomePage />} />
-        <Route path="/token" element={<h1>Processing OAuth2 Callback...</h1>} />
+        <Route path="/token" element={<TokenPage />} />
         <Route
           path="/authenticated"
           element={
